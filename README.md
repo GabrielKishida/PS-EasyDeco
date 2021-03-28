@@ -1,6 +1,8 @@
 # Processo Seletivo - EasyDeco
 Neste repositório, existe o programa desenvolvido para atender ao teste de programação do processo seletivo da EasyDeco.
 
+### [Clique aqui](passwordvalidation.py) para visualizar a resolução
+
 ## O problema:
 O problema a ser resolvido é o seguinte:
 

@@ -8,14 +8,18 @@
 
 ### Definição de Funções Auxiliares ###
 
-# Função que valida se a senha tem tamanho válido
+# Funcionalidade: valida se a senha tem tamanho válido
+# Analisa o número de caracteres na String. 
+# Se estiver no intervalo correto, retorna True. Caso contrário, retorna False.
 def valid_string_size(password) :
     valid = len(password) <=14 and len(password) >= 8
     if not valid :
         print("A sua senha tem tamanho inválido (deve conter de 8 a 14 caracteres).")
     return valid
 
-# Função que valida se a senha tem pelo menos uma letra maiúscula
+# Funcionalidade: valida se a senha tem pelo menos uma letra maiúscula.
+# Percorre as letras maiúsculas até encontrar alguma que esteja na senha.
+# Se encontrar alguma, retorna True. Caso contrário, retorna False.
 def has_upper(password) :
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     for char in upper :
@@ -24,7 +28,9 @@ def has_upper(password) :
     print("A sua senha deve conter pelo menos um caractere maiúsculo.")
     return False
 
-# Função que valida se a senha tem pelo menos uma letra minúscula
+# Funcionalidade: valida se a senha tem pelo menos uma letra minúscula.
+# Percorre as letras minúsculas até encontrar alguma que esteja na senha.
+# Se encontrar alguma, retorna True. Caso contrário, retorna False.
 def has_lower(password) :
     upper = "abcdefghijklmnopqrstuvwxyz"
     for char in upper :
@@ -33,7 +39,9 @@ def has_lower(password) :
     print("A sua senha deve conter pelo menos um caractere minúsculo.")
     return False
 
-# Função que valida se a senha tem pelo menos um algarismo
+# Funcionalidade: valida se a senha tem pelo menos um algarismo.
+# Percorre a senha, até encontrar um dígito.
+# Se encontrar algum, retorna True. Caso contrário, retorna False.
 def has_number(password) :
     for char in password :
         if char.isdigit(): 
@@ -41,7 +49,9 @@ def has_number(password) :
     print("A sua senha deve conter pelo menos um número.")
     return False
 
-# Função que valida se a senha tem pelo menos um caractere especial
+# Funcionalidade: valida se a senha tem pelo menos um caractere especial.
+# Percorre os caracteres especiais, até encontrar um que esteja na senha.
+# Se encontrar algum, retorna True. Caso contrário, retorna False.
 def has_specialchar(password) :
     specialchar = "/\[@_!#$%^&*()<>?}{~:]|"
     for char in specialchar :
@@ -50,7 +60,10 @@ def has_specialchar(password) :
     print("A sua senha deve conter pelo menos um caractere especial.")
     return False
 
-# Função que valida se a senha repete uma sequência de caracteres (não pode repitir)
+# Funcionalidade: valida se a senha repete uma sequência de caracteres (não pode repetir)
+# Percorre a senha, selecionando todos os pares sequenciais de caracteres menos o último (é possível que
+# uma substring maior do que 2 se repita, mas só é necessário avaliar o menor caso).
+# Se encontrar um par que se repete (aparece mais de uma vez), então retorna True. Se não, retorna False.
 def repeats_sequence(password) :
     n = len(password)
     for i in range(n-2) :
@@ -60,7 +73,8 @@ def repeats_sequence(password) :
             return True
     return False
 
-# Função que verifica se todas as validações foram feitas de maneira correta.
+# Funcionalidade: verifica se todas as validações são True. 
+# Retorna False se houver ao menos 1 False. Retorna True caso contrário.
 def multiple_validation(validations) :
     valid = True
     for validation in validations :
