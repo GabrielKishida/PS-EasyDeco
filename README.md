@@ -11,6 +11,8 @@ Validação de padrão de senha, utilizando os seguintes critérios:
 3. Obrigatório pelo menos um caracter maíusculo, um minúsculo, um número e um caracter especial;
 4. Não é permitido repetir a mesma sequencia de caracteres;
 
+Deve-se desenvolver um programa que recebe uma senha e avalia se estes critérios são cumpridos ou não.
+
 ## Resolução :
 A resolução escolhida para o problema foi desenvolvida em Python, e pode ser visualizada [aqui](/passwordvalidation.py).
 
