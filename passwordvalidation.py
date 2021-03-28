@@ -81,6 +81,7 @@ def password_validation(password) :
     validations.append(has_number(password))
     validations.append(has_specialchar(password))
     validations.append(not repeats_sequence(password))
+    # Se um novo critério tiver que ser inserido, basta colocar validations.append(critério(password))
     valid = multiple_validation(validations)
     if valid :
         print("Senha válida.")
